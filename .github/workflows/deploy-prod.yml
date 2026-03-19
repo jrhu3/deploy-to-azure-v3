@@ -10,7 +10,7 @@ env:
   ###############################################
   ### Replace <username> with GitHub username ###
   ###############################################
-  DOCKER_IMAGE_NAME: jrhu3-azure-ttt
+  DOCKER_IMAGE_NAME: jrhu3-azure-ttt3
   AZURE_WEBAPP_NAME: jrhu3-ttt3-app
   ###############################################
 
