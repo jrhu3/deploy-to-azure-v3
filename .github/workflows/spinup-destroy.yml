@@ -12,7 +12,7 @@ env:
   ###############################################
   ### Replace <username> with GitHub username ###
   ###############################################
-  AZURE_WEBAPP_NAME: jrhu3-ttt3-app
+  AZURE_WEBAPP_NAME: jrhu3-ttt3-test1-app
 
 jobs:
   setup-up-azure-resources:
