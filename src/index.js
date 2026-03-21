@@ -35,7 +35,7 @@ window.onload = () => {
         evt.target.onclick = undefined;
 
         const [row, col] = evt.target.classList;
-        showText("Click: Row " + row + ", Column " + col);
+        window.showText("Click: Row " + row + ", Column " + col);
         game.turn(row, col);
 
         if (game.hasWinner()) {
