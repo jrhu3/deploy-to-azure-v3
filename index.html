@@ -59,15 +59,20 @@
     <br><br>
     <div> 
       <center>
-        <small>Version: 3-test1.14</small>
+        <small>Version: 3-test1.15</small>
         &nbsp; - &nbsp;
-        <a href="#" onclick="showDebug(); return false;"><small>Show Console</small></a>
+        <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
       </center>
+      <script>
+        function showDebug() {
+            document.getElementById('debug_output').classList.toggle('hidden');
+        }
+      </script>
     </div>
     <br>
     <div hidden name="debug_output">
       <textarea readonly cols="120" rows="28" name="debug_output_text">
-        Default textarea contents
+        Initial textarea contents
       </textarea>
     </div>
   </body>
