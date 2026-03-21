@@ -59,13 +59,14 @@
     <br><br>
     <div> 
       <center>
-        <small>Version: 3-test1.16</small>
+        <small>Version: 3-test1.17</small>
         &nbsp; - &nbsp;
         <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
       </center>
       <script>
         function showDebug() {
-            document.getElementById('debug_output').classList.toggle('hidden');
+            console = document.getElementById('debug_output');
+            console.hidden = !console.hidden;
         }
       </script>
     </div>
