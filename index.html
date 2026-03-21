@@ -59,7 +59,7 @@
     <br><br>
     <div> 
       <center>
-        <small>Version: 3-test1.18</small>
+        <small>Version: 3-test1.19</small>
         &nbsp; - &nbsp;
         <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
       </center>
@@ -67,6 +67,13 @@
         function showDebug() {
           console = document.getElementById('debug_output');
           console.hidden = !console.hidden;
+          showText("Toggled console ON");
+        }
+        function showText(newtext) { // Add text in the console window if it is not hidden
+          console = document.getElementById('debug_output');
+          if( !console.hidden) {
+            addDebugText(newtext);
+          }
         }
         function addDebugText(newtext) {
           debug_text = document.getElementById('debug_text');
