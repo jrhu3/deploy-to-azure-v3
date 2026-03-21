@@ -59,7 +59,7 @@
     <br><br>
     <div> 
       <center>
-        <small>Version: 3-test1.23</small>
+        <small>Version: 3-test1.24</small>
         &nbsp; - &nbsp;
         <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
       </center>
@@ -79,6 +79,7 @@
           debug_text = document.getElementById('debug_text');
           debug_text.value += "\n";
           debug_text.value += newtext;
+          debug_text.scrollTop = debug_text.scrollHeight;
         }
         function clearText() {
           debug_text = document.getElementById('debug_text');
