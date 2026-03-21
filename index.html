@@ -57,6 +57,42 @@
       </div>
     </div>
     <br><br>
-    <center><small>Version: 3-test1.7</small></center>
+    <div> 
+      <center>
+        <small>Version: 3-test1.20</small>
+        &nbsp; - &nbsp;
+        <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
+      </center>
+      <script>
+        function showDebug() {
+          console = document.getElementById('debug_output');
+          console.hidden = !console.hidden;
+          showText("Showing debug console");
+        }
+        function showText(newtext) { // Add text in the console window if it is not hidden
+          console = document.getElementById('debug_output');
+          if( !console.hidden) {
+            addDebugText(newtext);
+          }
+        }
+        function addDebugText(newtext) {
+          debug_text = document.getElementById('debug_text');
+          debug_text.value += "\n";
+          debug_text.value += newtext;
+        }
+        function clearText() {
+          debug_text = document.getElementById('debug_text');
+          debug_text.value = "";
+        }
+      </script>
+    </div>
+    <br>
+    <div hidden id="debug_output">
+      <button onClick="clearText()">Clear Output</button>
+      <br>
+      <textarea readonly id="debug_text" cols="120" rows="10" name="debug_output_text">
+Initial textarea contents
+      </textarea>
+    </div>
   </body>
 </html>
