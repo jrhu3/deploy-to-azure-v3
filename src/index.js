@@ -1,6 +1,6 @@
 import Game from "./game.js";
 
-var game = null;
+var g_game = null;
 
 let p1, p2;
 while (!p1) {
@@ -14,8 +14,8 @@ while (!p2 && p1 !== p2) {
 }
 
 function printGameData() {
-  if(game) {
-    game.printData();
+  if(global.g_game) {
+    global.g_game.printData();
   }
 }
 
@@ -31,7 +31,8 @@ window.onload = () => {
     document.getElementById("p1Score").innerText = score1;
     document.getElementById("p2Score").innerText = score2;
 
-    game = new Game(p1, p2);
+    global.g_game = new Game(p1, p2);
+    const game = global.g_game;
     const player = document.getElementById("player");
     player.innerText = game.player;
 
