@@ -14,8 +14,13 @@ while (!p2 && p1 !== p2) {
 }
 
 function printGameData() {
+  console.log("In printGameData()")
   if(global.g_game) {
+    console.log("g_game is NOT null");
     global.g_game.printData();
+  }
+  else {
+    console.log("g_game is null");
   }
 }
 
