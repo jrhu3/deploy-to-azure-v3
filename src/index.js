@@ -23,6 +23,7 @@ function printGameData() {
     console.log("g_game is null");
   }
 }
+document.printGameDataFunc = printGameData;
 
 window.onload = () => {
   document.getElementById("p1Name").innerText = p1;
