@@ -61,17 +61,17 @@
       <center>
         <small>Version: 3-test1.32</small>
         &nbsp; - &nbsp;
-        <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
+        <a href="#" onclick="showDebug(); return false;"><small>Toggle Custom Console</small></a>
       </center>
       <script>
         function showDebug() {
-          console = document.getElementById('debug_output');
-          console.hidden = !console.hidden;
+          customConsole = document.getElementById('debug_output');
+          customConsole.hidden = !customConsole.hidden;
           showText("Showing debug console");
         }
         function showText(newtext) { // Add text in the console window if it is not hidden
-          console = document.getElementById('debug_output');
-          if( !console.hidden) {
+          customConsole = document.getElementById('debug_output');
+          if( !customConsole.hidden) {
             addDebugText(newtext);
           }
         }
