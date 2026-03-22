@@ -1,5 +1,7 @@
 import Game from "./game.js";
 
+var game = null;
+
 let p1, p2;
 while (!p1) {
   p1 = window.prompt("Who is player 1?");
@@ -9,6 +11,12 @@ while (!p2 && p1 !== p2) {
   p2 = window.prompt(
     p1 === p2 ? `Please enter a different name than ${p1}.` : "What is the name of player 2?"
   );
+}
+
+function printGameData() {
+  if(game) {
+    game.printData();
+  }
 }
 
 window.onload = () => {
@@ -23,7 +31,7 @@ window.onload = () => {
     document.getElementById("p1Score").innerText = score1;
     document.getElementById("p2Score").innerText = score2;
 
-    const game = new Game(p1, p2);
+    game = new Game(p1, p2);
     const player = document.getElementById("player");
     player.innerText = game.player;
 
