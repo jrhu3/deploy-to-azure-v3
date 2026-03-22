@@ -58,4 +58,12 @@ export default class Game {
       (b[0][2] !== null && b[0][2] === b[1][1] && b[0][2] === b[2][0])
     );
   }
+
+  printData() {
+    window.showText("Player 1: " + this.p1);
+    window.showText("Player 2: " + this.p2);
+    window.showText("Player: " + this.player);
+    window.showText("Sym: " + this.sym);
+    window.showText("Board: " + this.board);
+  }
 }
