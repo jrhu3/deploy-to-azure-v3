@@ -66,4 +66,8 @@ export default class Game {
     window.showText("Sym: " + this.sym);
     window.showText("Board: " + this.board);
   }
+
+  consoleLog(msg) {
+    console.log(msg);
+  }
 }
