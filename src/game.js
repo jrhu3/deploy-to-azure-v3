@@ -68,6 +68,6 @@ export default class Game {
   }
 
   consoleLog(msg) {
-    console.log(msg);
+    window.console.log(msg);
   }
 }
