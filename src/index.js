@@ -38,6 +38,10 @@ window.onload = () => {
 
     global.g_game = new Game(p1, p2);
     const game = global.g_game;
+    console.log("game was created");
+    if(game) {
+      console.log("game var is set");
+    }
     const player = document.getElementById("player");
     player.innerText = game.player;
 
@@ -50,6 +54,7 @@ window.onload = () => {
 
         const [row, col] = evt.target.classList;
         window.showText("Click: Row " + row + ", Column " + col);
+        console.log("Click: Row " + row + ", Column " + col);
         game.turn(row, col);
 
         if (game.hasWinner()) {
