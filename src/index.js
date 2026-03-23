@@ -54,8 +54,8 @@ window.onload = () => {
         evt.target.onclick = undefined;
 
         const [row, col] = evt.target.classList;
-        window.showText("Click: Row " + row + ", Column " + col);
-        //game.consoleLog("Click: Row " + row + ", Column " + col);
+        window.showText("Click: Row " + row + ", Column " + (col||row));
+        //game.consoleLog("Click: Row " + row + ", Column " + (col||row));
         game.turn(row, col);
 
         if (game.hasWinner()) {
