@@ -64,6 +64,7 @@ window.onload = () => {
         game.turn(row, col);
 
         if (game.hasWinner()) {
+          window.showText("We have a winner");
           document.getElementById("winner").innerText = game.player;
           document.getElementById("win_symbol").innerText = game.sym;
           document.getElementById("win").style.display = "inline";
@@ -85,6 +86,7 @@ window.onload = () => {
         } 
 
         else if( isTie()) {
+          window.showText("We have a tie");
           document.getElementById("win").style.display = "none";
           document.getElementById("turn").style.display = "none";
           document.getElementById("tie").style.display = "inline";
@@ -96,6 +98,7 @@ window.onload = () => {
         }
 
         else {
+          window.showText("Next player's turn");
           game.nextPlayer();
           player.innerText = game.player;
           cur_symbol.innerText = game.sym;
