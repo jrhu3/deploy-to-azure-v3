@@ -59,6 +59,14 @@ export default class Game {
     );
   }
 
+  isTie() {
+    const b = this.board;
+    return ( !hasWinner() &&
+            b[0][0] != null && b[0][1] != null && b[0][2] != null &&
+            b[1][0] != null && b[1][1] != null && b[1][2] != null &&
+            b[2][0] != null && b[2][1] != null && b[2][2] != null);
+  }
+
   printData() {
     window.showText("Player 1: " + this.p1);
     window.showText("Player 2: " + this.p2);
