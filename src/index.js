@@ -62,6 +62,7 @@ window.onload = () => {
 
         if (game.hasWinner()) {
           document.getElementById("winner").innerText = game.player;
+          document.getElementById("win_symbol").innerText = game.sym;
           document.getElementById("win").style.display = "inline";
           document.getElementById("turn").style.display = "none";
 
