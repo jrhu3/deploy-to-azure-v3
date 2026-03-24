@@ -1,5 +1,5 @@
 export default class Game {
-  constructor(p1, p2) {
+  constructor(p1, p2, firstPlayer) {
     this.p1 = p1;
     this.p2 = p2;
     this.board = [
@@ -7,7 +7,13 @@ export default class Game {
       [null, null, null],
       [null, null, null],
     ];
-    this.player = Math.random() < 0.5 ? this.p1 : this.p2;
+    
+    if (firstPlayer == 1) {
+      this.player = this.p1;
+    } else {
+      this.player = this.p2;
+    }
+    
     this.sym = "X";
   }
 
