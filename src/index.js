@@ -80,6 +80,7 @@ window.onload = () => {
         } else {
           game.nextPlayer();
           player.innerText = game.player;
+          cur_symbol.innerText = game.sym;
         }
       };
     });
