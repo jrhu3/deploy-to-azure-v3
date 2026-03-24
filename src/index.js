@@ -30,12 +30,15 @@ window.onload = () => {
   document.getElementById("p2Name").innerText = p2;
   let score1 = 0;
   let score2 = 0;
+  let numTies = 0;
 
   (function playGame(p1, p2) {
     document.getElementById("win").style.display = "none";
+    document.getElementById("tie").style.display = "none";
     document.getElementById("turn").style.display = "inline";
     document.getElementById("p1Score").innerText = score1;
     document.getElementById("p2Score").innerText = score2;
+    document.getElementById("numTies").innerText = numTies;
 
     global.g_game = new Game(p1, p2);
     const game = global.g_game;
@@ -65,6 +68,7 @@ window.onload = () => {
           document.getElementById("win_symbol").innerText = game.sym;
           document.getElementById("win").style.display = "inline";
           document.getElementById("turn").style.display = "none";
+          document.getElementById("tie").style.display = "none";
 
           if (game.player === p1) {
             document.getElementById("p1Score").innerText = ++score1;
@@ -78,7 +82,20 @@ window.onload = () => {
           document.querySelectorAll("td").forEach((el) => {
             el.onclick = undefined;
           });
-        } else {
+        } 
+
+        else if( isTie()) {
+          document.getElementById("win").style.display = "none";
+          document.getElementById("turn").style.display = "none";
+          document.getElementById("tie").style.display = "inline";
+          
+          document.getElementById("numTies").innerText = ++numTies;
+          
+          document.getElementById("newGameFromTie").style.display = "inline";
+          document.getElementById("newGameFromTie").onclick = () => playGame(p1, p2);
+        }
+
+        else {
           game.nextPlayer();
           player.innerText = game.player;
           cur_symbol.innerText = game.sym;
