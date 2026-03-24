@@ -85,7 +85,7 @@ window.onload = () => {
           });
         } 
 
-        else if( isTie()) {
+        else if (game.isTie()) {
           window.showText("We have a tie");
           document.getElementById("win").style.display = "none";
           document.getElementById("turn").style.display = "none";
