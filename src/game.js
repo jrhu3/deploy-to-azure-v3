@@ -1,5 +1,5 @@
 export default class Game {
-  constructor(p1, p2) {
+  constructor(p1, p2, firstPlayer) {
     this.p1 = p1;
     this.p2 = p2;
     this.board = [
@@ -7,7 +7,13 @@ export default class Game {
       [null, null, null],
       [null, null, null],
     ];
-    this.player = Math.random() < 0.5 ? this.p1 : this.p2;
+    
+    if (firstPlayer == 1) {
+      this.player = this.p1;
+    } else {
+      this.player = this.p2;
+    }
+    
     this.sym = "X";
   }
 
@@ -57,5 +63,25 @@ export default class Game {
       (b[0][0] !== null && b[0][0] === b[1][1] && b[0][0] === b[2][2]) ||
       (b[0][2] !== null && b[0][2] === b[1][1] && b[0][2] === b[2][0])
     );
+  }
+
+  isTie() {
+    const b = this.board;
+    return ( !this.hasWinner() &&
+            b[0][0] != null && b[0][1] != null && b[0][2] != null &&
+            b[1][0] != null && b[1][1] != null && b[1][2] != null &&
+            b[2][0] != null && b[2][1] != null && b[2][2] != null);
+  }
+
+  printData() {
+    window.showText("Player 1: " + this.p1);
+    window.showText("Player 2: " + this.p2);
+    window.showText("Current Player: " + this.player);
+    window.showText("Current Symbol: " + this.sym);
+    window.showText("Board: " + this.board);
+  }
+
+  consoleLog(msg) {
+    window.console.log(msg);
   }
 }

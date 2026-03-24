@@ -13,12 +13,17 @@
     <center><h1 id="game_title">TicTacToe</h1></center>
     <div id="app">
       <div>
-        <h2 id="turn">It's <span id="player"></span>'s turn!</h2>
+        <h2 id="turn">It's <span id="player"></span>'s turn! (<span id="cur_symbol"></span>)</h2>
         <h2 id="win">
-          <span id="winner"></span> wins!
+          <span id="winner"></span> wins! (<span id="win_symbol"></span>)
           <button id="newGame">Play again?</button>
         </h2>
+        <h2 id="tie">
+          The game was a tie!
+          <button id="newGameFromTie">Play again?</button>
+        </h2>
       </div>
+      <br><br>
       <div id="game">
         <table id="tictactoe">
           <tr>
@@ -44,12 +49,14 @@
               <tr>
                 <th id="p1Name"></th>
                 <th id="p2Name"></th>
+                <th>Ties</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td id="p1Score">0</td>
                 <td id="p2Score">0</td>
+                <td id="numTies">0</td>
               </tr>
             </tbody>
           </table>
@@ -59,19 +66,19 @@
     <br><br>
     <div> 
       <center>
-        <small>Version: 3-test1.20</small>
+        <small>Version: 3-test1.2.6</small>
         &nbsp; - &nbsp;
-        <a href="#" onclick="showDebug(); return false;"><small>Toggle Console</small></a>
+        <a href="#" onclick="showDebug(); return false;"><small>Toggle Custom Console</small></a>
       </center>
       <script>
         function showDebug() {
-          console = document.getElementById('debug_output');
-          console.hidden = !console.hidden;
+          customConsole = document.getElementById('debug_output');
+          customConsole.hidden = !customConsole.hidden;
           showText("Showing debug console");
         }
         function showText(newtext) { // Add text in the console window if it is not hidden
-          console = document.getElementById('debug_output');
-          if( !console.hidden) {
+          customConsole = document.getElementById('debug_output');
+          if( !customConsole.hidden) {
             addDebugText(newtext);
           }
         }
@@ -79,6 +86,7 @@
           debug_text = document.getElementById('debug_text');
           debug_text.value += "\n";
           debug_text.value += newtext;
+          debug_text.scrollTop = debug_text.scrollHeight;
         }
         function clearText() {
           debug_text = document.getElementById('debug_text');
@@ -89,6 +97,8 @@
     <br>
     <div hidden id="debug_output">
       <button onClick="clearText()">Clear Output</button>
+      &nbsp;
+      <button onClick="document.printGameDataFunc()">Print Data</button>
       <br>
       <textarea readonly id="debug_text" cols="120" rows="10" name="debug_output_text">
 Initial textarea contents
