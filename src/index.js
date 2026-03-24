@@ -31,6 +31,7 @@ window.onload = () => {
   let score1 = 0;
   let score2 = 0;
   let numTies = 0;
+  let firstPlayer = 0;
 
   (function playGame(p1, p2) {
     document.getElementById("win").style.display = "none";
@@ -40,7 +41,13 @@ window.onload = () => {
     document.getElementById("p2Score").innerText = score2;
     document.getElementById("numTies").innerText = numTies;
 
-    global.g_game = new Game(p1, p2);
+    // Alternate who goes first
+    ++firstPlayer;
+    if (firstPlayer > 2) {
+      firstPlayer = 1;
+    }
+    
+    global.g_game = new Game(p1, p2, firstPlayer);
     const game = global.g_game;
     console.log("game was created");
     if(game) {
