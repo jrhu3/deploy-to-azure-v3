@@ -61,7 +61,7 @@ export default class Game {
 
   isTie() {
     const b = this.board;
-    return ( !hasWinner() &&
+    return ( !this.hasWinner() &&
             b[0][0] != null && b[0][1] != null && b[0][2] != null &&
             b[1][0] != null && b[1][1] != null && b[1][2] != null &&
             b[2][0] != null && b[2][1] != null && b[2][2] != null);
