@@ -62,8 +62,8 @@ export default class Game {
   printData() {
     window.showText("Player 1: " + this.p1);
     window.showText("Player 2: " + this.p2);
-    window.showText("Player: " + this.player);
-    window.showText("Sym: " + this.sym);
+    window.showText("Current Player: " + this.player);
+    window.showText("Current Symbol: " + this.sym);
     window.showText("Board: " + this.board);
   }
 
