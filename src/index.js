@@ -45,6 +45,8 @@ window.onload = () => {
     }
     const player = document.getElementById("player");
     player.innerText = game.player;
+    const cur_symbol = document.getElementById("cur_symbol");
+    cur_symbol.innerText = game.sym;
 
     document.querySelectorAll("#tictactoe td").forEach((el) => {
       el.innerText = "";
